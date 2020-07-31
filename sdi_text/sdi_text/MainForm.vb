@@ -18,6 +18,15 @@ Public Class textEditorForm
         End If
     End Sub
 
+    Function ConfirmClose() As Boolean
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to close this ?", "Confirm Close", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 #Region "File"
     ''' <summary>
     ''' Create a new page of text 
@@ -25,7 +34,10 @@ Public Class textEditorForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub NewClick(sender As Object, e As EventArgs) Handles mnuFileNew.Click
-        txtTextArea.Text = String.Empty
+        If ConfirmClose() = True Then
+            Call SaveClick(Me, e)
+            txtTextArea.Text = String.Empty
+        End If
     End Sub
 
     ''' <summary>
@@ -34,16 +46,24 @@ Public Class textEditorForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub OpenClick(sender As Object, e As EventArgs) Handles mnuFileOpen.Click
-        Dim filestream As StreamReader
+        If ConfirmClose() = True Then
+            Call SaveClick(Me, e)
+            Dim filestream As StreamReader
 
-        If openFileDialog.ShowDialog() = DialogResult.OK Then
-            filestream = New StreamReader(openFileDialog.FileName)
-            txtTextArea.Text = filestream.ReadToEnd()
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                filestream = New StreamReader(openFileDialog.FileName)
+                txtTextArea.Text = filestream.ReadToEnd()
 
-            filestream.Close()
+                filestream.Close()
+            End If
         End If
     End Sub
 
+    ''' <summary>
+    ''' Save the text file after editing
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SaveClick(sender As Object, e As EventArgs) Handles mnuFileSave.Click
         saveDialog.Title = "Save Text Files"
         saveDialog.CheckFileExists = True
@@ -58,6 +78,11 @@ Public Class textEditorForm
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Save the text file as a new file 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SaveAsClick(sender As Object, e As EventArgs) Handles mnuFileSaveAs.Click
         saveDialog.Title = "Save Text Files"
         saveDialog.CheckFileExists = False
@@ -81,7 +106,10 @@ Public Class textEditorForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub CloseClick(sender As Object, e As EventArgs) Handles mnuFileClose.Click
-        Me.Close()
+        If ConfirmClose() = True Then
+            Call SaveClick(Me, e)
+            Me.Close()
+        End If
     End Sub
 
     ''' <summary>
@@ -90,7 +118,11 @@ Public Class textEditorForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ExitClick(sender As Object, e As EventArgs) Handles mnuFileExit.Click
-        Application.Exit()
+        If ConfirmClose() = True Then
+            Call SaveClick(Me, e)
+            Application.Exit()
+        End If
+
     End Sub
 #End Region
 
@@ -135,6 +167,7 @@ Public Class textEditorForm
         Dim aboutModal As New aboutForm
         aboutModal.ShowDialog()
     End Sub
+
 #End Region
 
 End Class

@@ -63,39 +63,39 @@ Partial Class textEditorForm
         '
         Me.mnuFileNew.Name = "mnuFileNew"
         Me.mnuFileNew.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.mnuFileNew.Size = New System.Drawing.Size(224, 26)
+        Me.mnuFileNew.Size = New System.Drawing.Size(181, 26)
         Me.mnuFileNew.Text = "New"
         '
         'mnuFileOpen
         '
         Me.mnuFileOpen.Name = "mnuFileOpen"
         Me.mnuFileOpen.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.mnuFileOpen.Size = New System.Drawing.Size(224, 26)
+        Me.mnuFileOpen.Size = New System.Drawing.Size(181, 26)
         Me.mnuFileOpen.Text = "Open"
         '
         'mnuFileSave
         '
         Me.mnuFileSave.Name = "mnuFileSave"
         Me.mnuFileSave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.mnuFileSave.Size = New System.Drawing.Size(224, 26)
+        Me.mnuFileSave.Size = New System.Drawing.Size(181, 26)
         Me.mnuFileSave.Text = "Save"
         '
         'mnuFileSaveAs
         '
         Me.mnuFileSaveAs.Name = "mnuFileSaveAs"
-        Me.mnuFileSaveAs.Size = New System.Drawing.Size(224, 26)
+        Me.mnuFileSaveAs.Size = New System.Drawing.Size(181, 26)
         Me.mnuFileSaveAs.Text = "Save As"
         '
         'mnuFileClose
         '
         Me.mnuFileClose.Name = "mnuFileClose"
-        Me.mnuFileClose.Size = New System.Drawing.Size(224, 26)
+        Me.mnuFileClose.Size = New System.Drawing.Size(181, 26)
         Me.mnuFileClose.Text = "Close"
         '
         'mnuFileExit
         '
         Me.mnuFileExit.Name = "mnuFileExit"
-        Me.mnuFileExit.Size = New System.Drawing.Size(224, 26)
+        Me.mnuFileExit.Size = New System.Drawing.Size(181, 26)
         Me.mnuFileExit.Text = "Exit"
         '
         'mnuEdit
@@ -109,21 +109,21 @@ Partial Class textEditorForm
         '
         Me.mnuEditCopy.Name = "mnuEditCopy"
         Me.mnuEditCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.mnuEditCopy.Size = New System.Drawing.Size(224, 26)
+        Me.mnuEditCopy.Size = New System.Drawing.Size(181, 26)
         Me.mnuEditCopy.Text = "Copy "
         '
         'mnuEditCut
         '
         Me.mnuEditCut.Name = "mnuEditCut"
         Me.mnuEditCut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuEditCut.Size = New System.Drawing.Size(224, 26)
+        Me.mnuEditCut.Size = New System.Drawing.Size(181, 26)
         Me.mnuEditCut.Text = "Cut"
         '
         'mnuEditPaste
         '
         Me.mnuEditPaste.Name = "mnuEditPaste"
         Me.mnuEditPaste.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.mnuEditPaste.Size = New System.Drawing.Size(224, 26)
+        Me.mnuEditPaste.Size = New System.Drawing.Size(181, 26)
         Me.mnuEditPaste.Text = "Paste"
         '
         'mnuHelp
