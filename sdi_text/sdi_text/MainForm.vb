@@ -18,6 +18,10 @@ Public Class textEditorForm
         End If
     End Sub
 
+    ''' <summary>
+    ''' A function that pop up a message box to ask if the user want to close the text editor 
+    ''' </summary>
+    ''' <returns></returns>
     Function ConfirmClose() As Boolean
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to close this ?", "Confirm Close", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
